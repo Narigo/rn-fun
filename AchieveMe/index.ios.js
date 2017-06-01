@@ -4,29 +4,58 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import {NativeRouter, Link, Route} from "react-router-native";
+
+const Home = () => (
+  <Link to="/first">
+    <Text style={styles.welcome}>
+      Welcome to React Native!
+    </Text>
+  </Link>
+);
+
+const First = () => (
+  <View>
+  <Link to="/second">
+    <Text style={styles.welcome}>
+      Welcome to First
+    </Text>
+  </Link>
+  </View>
+);
+
+const Second = () => (
+  <Link to="/">
+    <Text style={styles.welcome}>
+      Welcome to Second
+    </Text>
+  </Link>
+);
 
 export default class AchieveMe extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
+      <NativeRouter>
+        <View style={styles.container}>
+          <Route path="/" exact component={Home} />
+          <Route path="/first" component={First} />
+          <Route path="/second" component={Second} />
+          <Text style={styles.instructions}>
+            To get started, edit index.ios.js
+          </Text>
+          <Text style={styles.instructions}>
+            Press Cmd+R to reload,{'\n'}
+            Cmd+D or shake for dev menu
+          </Text>
+        </View>
+      </NativeRouter>
     );
   }
 }
