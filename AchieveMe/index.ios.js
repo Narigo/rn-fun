@@ -23,11 +23,8 @@ const Home = () => (
 
 const First = () => (
   <View>
-  <Link to="/second">
-    <Text style={styles.welcome}>
-      Welcome to First
-    </Text>
-  </Link>
+    <Text style={styles.welcome}>Welcome to </Text>
+    <Link to="/second"><Text>First</Text></Link>
   </View>
 );
 
