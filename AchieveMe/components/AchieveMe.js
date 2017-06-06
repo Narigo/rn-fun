@@ -1,6 +1,6 @@
 import React from "react";
 import {StyleSheet, Text, View} from 'react-native';
-import {NativeRouter, Route} from "react-router-native";
+import {NativeRouter, Route, Link} from "react-router-native";
 import {Achievements, Home, First, Second} from "./index";
 
 export const AchieveMe = ({children}) => {
@@ -11,9 +11,11 @@ export const AchieveMe = ({children}) => {
         <Route path="/achievements" component={Achievements} styles={styles.welcome} />
         <Route path="/first" component={First} styles={styles.welcome} />
         <Route path="/second" component={Second} styles={styles.welcome} />
-        <Text style={styles.instructions}>
-          To get started, edit index.*.js
-        </Text>
+        <Link to="/achievements">
+          <Text style={styles.instructions}>To Achievements</Text>
+        </Link>
+        <Link to="/">
+          <Text style={styles.instructions}>To Home</Text></Link>
         <Text style={styles.instructions}>
           {children}
         </Text>
