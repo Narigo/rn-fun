@@ -9,8 +9,6 @@ export const AchieveMe = ({children}) => {
       <View style={styles.container}>
         <Route path="/" exact component={Home} styles={styles.welcome} />
         <Route path="/achievements" component={Achievements} styles={styles.welcome} />
-        <Route path="/first" component={First} styles={styles.welcome} />
-        <Route path="/second" component={Second} styles={styles.welcome} />
         <Link to="/achievements">
           <Text style={styles.instructions}>To Achievements</Text>
         </Link>
