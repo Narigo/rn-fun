@@ -8,15 +8,9 @@ export const AchieveMe = ({children}) => {
     <NativeRouter>
       <View style={styles.container}>
         <Route path="/" exact component={Home} styles={styles.welcome} />
-        <Route path="/achievements" component={Achievements} styles={styles.welcome} />
-        <Link to="/achievements">
-          <Text style={styles.instructions}>To Achievements</Text>
-        </Link>
-        <Link to="/">
-          <Text style={styles.instructions}>To Home</Text></Link>
-        <Text style={styles.instructions}>
-          {children}
-        </Text>
+        <Route path="/create" component={Achievements} styles={styles.welcome} />
+        <Route path="/list" component={Achievements} styles={styles.welcome} />
+        <Route path="/delete" component={Achievements} styles={styles.welcome} />
       </View>
     </NativeRouter>
   );
