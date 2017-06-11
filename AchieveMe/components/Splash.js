@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from "react-native";
 import {Link} from "react-router-native";
 
 export const Splash = () => (
-  <Link to="/achieveme/">
+  <Link to="/achieveme/list">
     <View style={styles.screen}>
       <Text style={styles.logo}>Logo</Text>
       <Text style={styles.title}>
