@@ -19,12 +19,18 @@ export const Menu = ({open}) => {
 
 const styles = StyleSheet.create({
   openMenu: {
-    backgroundColor: "#666"
+    backgroundColor: "#666",
+    alignSelf: "flex-start"
   },
   closedMenu: {
+    backgroundColor: "#666",
+    alignSelf: "flex-start",
+    justifyContent: 'center',
+    alignItems: 'center',
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "flex-end"
+    height: 200,
+    width: 200,
+    margin: "auto"
   },
   text: {
     fontSize: 18,
