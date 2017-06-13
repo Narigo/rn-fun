@@ -1,5 +1,6 @@
 import React from "react";
 import {Text, ScrollView} from "react-native";
+import {Link} from "react-router-native";
 
 export const Achievements = () => {
   return (
@@ -56,6 +57,7 @@ export const Achievements = () => {
       <Text>Achievement BX</Text>
       <Text>Achievement BY</Text>
       <Text>Achievement BZ</Text>
+      <Link to="list"><Text>Back to Home</Text></Link>
     </ScrollView>
   );
 };
