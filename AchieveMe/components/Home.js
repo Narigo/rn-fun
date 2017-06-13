@@ -1,10 +1,9 @@
 import React from "react";
 import {Text} from "react-native";
 
-export const Home = (props) => {
-  console.log("props=", props);
+export const Home = ({styles}) => {
   return (
-    <Text style={props.styles}>
+    <Text style={styles}>
       Welcome to React Native!
     </Text>
   );
