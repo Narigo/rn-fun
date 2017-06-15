@@ -19,10 +19,16 @@ export const Menu = ({open}) => {
 
 const styles = StyleSheet.create({
   openMenu: {
+    position: "absolute",
+    top: 0,
+    right: 0,
     backgroundColor: "#666",
     alignSelf: "flex-start"
   },
   closedMenu: {
+    position: "absolute",
+    top: 0,
+    right: 0,
     backgroundColor: "#666",
     alignSelf: "flex-start",
     justifyContent: 'center',
