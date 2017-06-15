@@ -1,5 +1,5 @@
 import React from "react";
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from "react-native";
 import {NativeRouter, Route} from "react-router-native";
 import {Achievements, Home, Menu, Splash} from "./index";
 
@@ -22,9 +22,9 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#222',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#222",
   },
   welcome: {
     backgroundColor: "#600"

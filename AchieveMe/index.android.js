@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {AppRegistry} from 'react-native';
+import React, {Component} from "react";
+import {AppRegistry} from "react-native";
 import {AchieveMe} from "./components/index";
 
 export default class App extends Component {
@@ -13,4 +13,4 @@ export default class App extends Component {
   }
 }
 
-AppRegistry.registerComponent('AchieveMe', () => App);
+AppRegistry.registerComponent("AchieveMe", () => App);
