@@ -1,5 +1,6 @@
 import React from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Link} from "react-router-native";
 
 export class Menu extends React.Component {
 
@@ -25,12 +26,13 @@ export class Menu extends React.Component {
               <Text style={styles.text}>Send achievement</Text>
             </View>
           </TouchableOpacity>
-          <View style={styles.menuItem}>
-            <Text style={styles.text}>Share</Text>
-          </View>
-          <View style={styles.menuItem}>
-            <Text style={styles.text}>Share</Text>
-          </View>
+          <TouchableOpacity onPress={() => this.toggleMenu()} style={styles.menuItem}>
+            <Link to="friends" style={styles.menuItem}>
+              <View>
+                <Text style={styles.text}>Friendlist</Text>
+              </View>
+            </Link>
+          </TouchableOpacity>
         </View>
       );
     } else {
@@ -76,12 +78,12 @@ const styles = StyleSheet.create({
     backgroundColor: "#666",
     display: "flex",
     justifyContent: "center",
-    height: 50,
+    height: 75,
     margin: "auto",
     position: "absolute",
     right: 0,
     top: 0,
-    width: 50,
+    width: 75,
     zIndex: 2
   },
   menuItem: {
