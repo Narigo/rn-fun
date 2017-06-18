@@ -2,40 +2,58 @@ import React from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 
 export class Menu extends React.Component {
+
   constructor(props) {
     super(props);
-    console.log("setting state for menu");
     this.state = {
       open: false
     };
   }
 
-  toggleMenu() {
-    console.log("toggling menu", this.state);
-    this.setState({open: !this.state.open});
-  }
-
   render() {
     const {open} = this.state;
-    console.log("render menu", this.state);
     if (open) {
       return (
-        <TouchableOpacity onPress={() => this.toggleMenu()} style={styles.openMenu}>
-          <View>
-            <Text style={styles.text}>Menu</Text>
+        <View style={styles.openMenu}>
+          <TouchableOpacity onPress={() => this.toggleMenu()} style={[styles.menuItem, styles.menuClose]}>
+            <View>
+              <Text style={styles.text}>X</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => this.sendAchievement()} style={styles.menuItem}>
+            <View>
+              <Text style={styles.text}>Send achievement</Text>
+            </View>
+          </TouchableOpacity>
+          <View style={styles.menuItem}>
+            <Text style={styles.text}>Share</Text>
           </View>
-        </TouchableOpacity>
+          <View style={styles.menuItem}>
+            <Text style={styles.text}>Share</Text>
+          </View>
+        </View>
       );
     } else {
       return (
         <TouchableOpacity onPress={() => this.toggleMenu()} style={styles.closedMenu}>
           <View>
-            <Text style={styles.text}>X</Text>
+            <Text style={styles.text}>Menu</Text>
           </View>
         </TouchableOpacity>
       )
     }
   }
+
+  toggleMenu() {
+    this.setState({open: !this.state.open});
+  }
+
+  sendAchievement() {
+    this.setState({open: false});
+    // TODO send achievement
+    console.log("sending achievement to someone in contacts...");
+  }
+
 }
 
 const styles = StyleSheet.create({
@@ -45,12 +63,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#666",
     display: "flex",
     justifyContent: "center",
-    height: 50,
     margin: "auto",
     position: "absolute",
     right: 0,
     top: 0,
-    width: 50,
+    width: "100%",
     zIndex: 2
   },
   closedMenu: {
@@ -66,6 +83,18 @@ const styles = StyleSheet.create({
     top: 0,
     width: 50,
     zIndex: 2
+  },
+  menuItem: {
+    alignItems: "center",
+    display: "flex",
+    justifyContent: "center",
+    minHeight: 50,
+    width: "100%"
+  },
+  menuClose: {
+    alignItems: "flex-end",
+    display: "flex",
+    justifyContent: "center",
   },
   text: {
     fontSize: 18,
