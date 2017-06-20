@@ -26,12 +26,10 @@ export class Menu extends React.Component {
               <Text style={styles.text}>Send achievement</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.toggleMenu()} style={styles.menuItem}>
-            <Link to="friends" style={styles.menuItem}>
-              <View>
-                <Text style={styles.text}>Friendlist</Text>
-              </View>
-            </Link>
+          <TouchableOpacity onPress={() => this.showFriendlist()()} style={styles.menuItem}>
+            <View>
+              <Text style={styles.text}>Friendlist</Text>
+            </View>
           </TouchableOpacity>
         </View>
       );
@@ -54,6 +52,12 @@ export class Menu extends React.Component {
     this.setState({open: false});
     // TODO send achievement
     console.log("sending achievement to someone in contacts...");
+  }
+
+  showFriendlist() {
+    this.setState({open: false});
+    // TODO redirect
+    console.log("redirecting to friendlist...");
   }
 
 }
