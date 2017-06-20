@@ -1,8 +1,8 @@
 import React from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
-import {Link} from "react-router-native";
+import {withRouter} from "react-router-native";
 
-export class Menu extends React.Component {
+class MenuImpl extends React.Component {
 
   constructor(props) {
     super(props);
@@ -26,7 +26,7 @@ export class Menu extends React.Component {
               <Text style={styles.text}>Send achievement</Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.showFriendlist()()} style={styles.menuItem}>
+          <TouchableOpacity onPress={() => this.showFriendlist()} style={styles.menuItem}>
             <View>
               <Text style={styles.text}>Friendlist</Text>
             </View>
@@ -49,18 +49,22 @@ export class Menu extends React.Component {
   }
 
   sendAchievement() {
+    const {history} = this.props;
     this.setState({open: false});
-    // TODO send achievement
     console.log("sending achievement to someone in contacts...");
+    history.push("list");
   }
 
   showFriendlist() {
+    const {history} = this.props;
     this.setState({open: false});
-    // TODO redirect
     console.log("redirecting to friendlist...");
+    history.push("friends");
   }
 
 }
+
+export const Menu = withRouter(MenuImpl);
 
 const styles = StyleSheet.create({
   openMenu: {
