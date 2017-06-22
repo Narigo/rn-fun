@@ -2,7 +2,7 @@ import React from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import {withRouter} from "react-router-native";
 
-class MenuImpl extends React.Component {
+export const Menu = withRouter(class extends React.Component {
 
   constructor(props) {
     super(props);
@@ -51,20 +51,16 @@ class MenuImpl extends React.Component {
   sendAchievement() {
     const {history} = this.props;
     this.setState({open: false});
-    console.log("sending achievement to someone in contacts...");
     history.push("list");
   }
 
   showFriendlist() {
     const {history} = this.props;
     this.setState({open: false});
-    console.log("redirecting to friendlist...");
     history.push("friends");
   }
 
-}
-
-export const Menu = withRouter(MenuImpl);
+});
 
 const styles = StyleSheet.create({
   openMenu: {
