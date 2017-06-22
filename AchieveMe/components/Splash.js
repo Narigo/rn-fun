@@ -3,7 +3,7 @@ import {StyleSheet, Text, View} from "react-native";
 import {Link} from "react-router-native";
 
 export const Splash = () => (
-  <Link to="/achieveme/list">
+  <Link to="/list">
     <View style={styles.screen}>
       <Text style={styles.logo}>Logo</Text>
       <Text style={styles.title}>
@@ -24,15 +24,14 @@ const styles = StyleSheet.create({
   logo: {
     marginBottom: 25
   },
+  title: {
+    fontSize: 32,
+    color: "#fff"
+  },
   titleFirst: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#fff"
+    fontWeight: "bold"
   },
-  titleSecond: {
-    fontSize: 32,
-    color: "#fff"
-  },
+  titleSecond: {},
   small: {
     fontSize: 12,
     color: "#666"

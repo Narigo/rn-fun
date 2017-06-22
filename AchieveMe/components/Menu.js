@@ -13,34 +13,40 @@ export const Menu = withRouter(class extends React.Component {
 
   render() {
     const {open} = this.state;
-    if (open) {
-      return (
-        <View style={styles.openMenu}>
-          <TouchableOpacity onPress={() => this.toggleMenu()} style={[styles.menuItem, styles.menuClose]}>
-            <View>
-              <Text style={styles.text}>X</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.sendAchievement()} style={styles.menuItem}>
-            <View>
-              <Text style={styles.text}>Send achievement</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={() => this.showFriendlist()} style={styles.menuItem}>
-            <View>
-              <Text style={styles.text}>Friendlist</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-      );
-    } else {
-      return (
-        <TouchableOpacity onPress={() => this.toggleMenu()} style={styles.closedMenu}>
-          <View>
-            <Text style={styles.text}>Menu</Text>
+    const isVisible = this.props.location.pathname !== "/";
+
+    if (isVisible) {
+      if (open) {
+        return (
+          <View style={styles.openMenu}>
+            <TouchableOpacity onPress={() => this.toggleMenu()} style={[styles.menuItem, styles.menuClose]}>
+              <View>
+                <Text style={styles.text}>X</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.sendAchievement()} style={styles.menuItem}>
+              <View>
+                <Text style={styles.text}>Send achievement</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => this.showFriendlist()} style={styles.menuItem}>
+              <View>
+                <Text style={styles.text}>Friendlist</Text>
+              </View>
+            </TouchableOpacity>
           </View>
-        </TouchableOpacity>
-      )
+        );
+      } else {
+        return (
+          <TouchableOpacity onPress={() => this.toggleMenu()} style={styles.closedMenu}>
+            <View>
+              <Text style={styles.text}>Menu</Text>
+            </View>
+          </TouchableOpacity>
+        )
+      }
+    } else {
+      return null;
     }
   }
 
@@ -51,13 +57,13 @@ export const Menu = withRouter(class extends React.Component {
   sendAchievement() {
     const {history} = this.props;
     this.setState({open: false});
-    history.push("list");
+    history.push("/list");
   }
 
   showFriendlist() {
     const {history} = this.props;
     this.setState({open: false});
-    history.push("friends");
+    history.push("/friends");
   }
 
 });

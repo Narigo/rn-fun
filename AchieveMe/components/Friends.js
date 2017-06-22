@@ -31,7 +31,7 @@ export const Friends = () => {
       <Text>Friend X</Text>
       <Text>Friend Y</Text>
       <Text>Friend Z</Text>
-      <Link to="list"><Text>Back to Home</Text></Link>
+      <Link to="/list"><Text>Back to Home</Text></Link>
     </ScrollView>
   );
 };
