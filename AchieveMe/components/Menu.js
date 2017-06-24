@@ -55,15 +55,17 @@ export const Menu = withRouter(class extends React.Component {
   }
 
   sendAchievement() {
-    const {history} = this.props;
-    this.setState({open: false});
-    history.push("/list");
+    this._link("/list");
   }
 
   showFriendlist() {
+    this._link("/friends");
+  }
+
+  _link(to) {
     const {history} = this.props;
     this.setState({open: false});
-    history.push("/friends");
+    history.push(to);
   }
 
 });
