@@ -1,5 +1,6 @@
 import React from "react";
-import {Text, ScrollView} from "react-native";
+import {ScrollView} from "react-native";
+import {Text} from "./Text";
 import {Link} from "react-router-native";
 
 export const Friends = () => {

@@ -1,5 +1,6 @@
 import React from "react";
-import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {StyleSheet, TouchableOpacity, View} from "react-native";
+import {Text} from "./Text";
 import {withRouter} from "react-router-native";
 
 export const Menu = withRouter(class extends React.Component {
