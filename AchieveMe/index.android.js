@@ -1,5 +1,3 @@
-import React, {Component} from "react";
-import {AppRegistry} from "react-native";
-import {AchieveMe} from "./components/index";
+import {starter} from "./starter";
 
-AppRegistry.registerComponent("AchieveMe", () => AchieveMe);
+starter();
