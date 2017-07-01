@@ -1,5 +1,6 @@
 export {AchieveMe} from "./AchieveMe";
 export {Achievements} from "./Achievements";
+export {Achievement} from "./Achievement";
 export {Create} from "./Create";
 export {Friends} from "./Friends";
 export {Home} from "./Home";

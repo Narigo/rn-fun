@@ -9,10 +9,11 @@ export const AchieveMe = () => {
       <View style={styles.container}>
         <Route path="/" exact component={(props) => <Splash {...props} styles={styles.welcome} />} />
         <Route path="/" component={(props) => <Menu {...props} styles={styles.welcome} />} />
+        <Route path="/home" component={(props) => <Home {...props} styles={styles.welcome} />} />
         <Route path="/create" component={(props) => <Create {...props} styles={styles.welcome} />} />
         <Route path="/friends" component={(props) => <Friends {...props} styles={styles.welcome} />} />
-        <Route path="/invite" component={(props) => <Achievements {...props} styles={styles.welcome} />} />
-        <Route path="/list" component={(props) => <Home {...props} styles={styles.welcome} />} />
+        <Route path="/list"
+               component={(props) => <Achievements {...props} achievements={achievements} styles={styles.welcome} />} />
       </View>
     </NativeRouter>
   );
@@ -31,3 +32,22 @@ const styles = StyleSheet.create({
     backgroundColor: "#600"
   }
 });
+
+const achievements = [
+  {
+    name: "Awesome breakfast",
+    awardedBy: "Paul"
+  },
+  {
+    name: "Defender of the Galaxy",
+    awardedBy: "Alexander"
+  },
+  {
+    name: "Collect 50 pairs of shoes",
+    awardedBy: "Chris"
+  },
+  {
+    name: "Godlike Father",
+    awardedBy: "Marina"
+  },
+];
