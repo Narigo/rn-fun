@@ -11,7 +11,8 @@ export const AchieveMe = () => {
         <Route path="/" component={(props) => <Menu {...props} styles={styles.welcome} />} />
         <Route path="/home" component={(props) => <Home {...props} styles={styles.welcome} />} />
         <Route path="/create" component={(props) => <Create {...props} styles={styles.welcome} />} />
-        <Route path="/friends" component={(props) => <Friends {...props} styles={styles.welcome} />} />
+        <Route path="/friends"
+               component={(props) => <Friends {...props} friends={friends} styles={styles.welcome} />} />
         <Route path="/list"
                component={(props) => <Achievements {...props} achievements={achievements} styles={styles.welcome} />} />
       </View>
@@ -50,4 +51,15 @@ const achievements = [
     name: "Godlike Father",
     awardedBy: "Marina"
   },
+];
+
+const friends = [
+  {name: "Paul"},
+  {name: "Alexander"},
+  {name: "Chris"},
+  {name: "Marina"},
+  {name: "Peter"},
+  {name: "Xombie"},
+  {name: "Sapphire2031"},
+  {name: "Galaxydefender"}
 ];
