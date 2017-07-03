@@ -37,19 +37,23 @@ const styles = StyleSheet.create({
 const achievements = [
   {
     name: "Awesome breakfast",
-    awardedBy: "Paul"
+    awardedBy: "Paul",
+    score: 1
   },
   {
     name: "Defender of the Galaxy",
-    awardedBy: "Alexander"
+    awardedBy: "Alexander",
+    score: 1
   },
   {
     name: "Collect 50 pairs of shoes",
-    awardedBy: "Chris"
+    awardedBy: "Chris",
+    score: 1
   },
   {
     name: "Godlike Father",
-    awardedBy: "Marina"
+    awardedBy: "Marina",
+    score: 1
   },
 ];
 
