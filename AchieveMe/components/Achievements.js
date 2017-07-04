@@ -1,5 +1,5 @@
 import React from "react";
-import {ScrollView, StyleSheet} from "react-native";
+import {ScrollView, StyleSheet, View} from "react-native";
 import {Achievement, Text} from "./";
 import {Link} from "react-router-native";
 
@@ -7,7 +7,14 @@ export const Achievements = ({achievements}) => {
   return (
     <ScrollView>
       {achievements.map((achievement, idx) => <Achievement key={idx} {...achievement} />)}
-      <Link to="/home" style={styles.linkWrap}><Text style={styles.wrap}><Text style={styles.inner}>Back to Home</Text></Text></Link>
+      <Link to="/home" style={styles.linkWrap}>
+        <Text style={styles.wrap}>
+          <Text style={styles.inner}>
+            Back to Home with a very long text that hopefully breaks into the next line just
+            to see how it behaves.
+          </Text>
+        </Text>
+      </Link>
     </ScrollView>
   );
 };
@@ -17,13 +24,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
+    alignItems: "center",
     justifyContent: "center",
+    alignSelf: "center",
+    width: 250
   },
   wrap: {
-    backgroundColor: "#0f0",
-    margin: 5
+    lineHeight: 25,
+    textAlign: "center",
   },
   inner: {
-    color: "#000"
+    color: "#000",
+    backgroundColor: "#0f0",
   }
 });
