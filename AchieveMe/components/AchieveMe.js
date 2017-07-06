@@ -38,22 +38,22 @@ const achievements = [
   {
     name: "Awesome breakfast",
     awardedBy: "Paul",
-    score: 1
+    score: getRandomScore()
   },
   {
     name: "Defender of the Galaxy",
     awardedBy: "Alexander",
-    score: 1
+    score: getRandomScore()
   },
   {
     name: "Collect 50 pairs of shoes",
     awardedBy: "Chris",
-    score: 1
+    score: getRandomScore()
   },
   {
     name: "Godlike Father",
     awardedBy: "Marina",
-    score: 1
+    score: getRandomScore()
   },
 ];
 
@@ -67,3 +67,7 @@ const friends = [
   {name: "Sapphire2031"},
   {name: "Galaxydefender"}
 ];
+
+function getRandomScore() {
+  return Math.floor(Math.random() * 5000);
+}
