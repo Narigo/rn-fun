@@ -5,7 +5,7 @@ import {Text} from "./";
 export const Achievement = ({awardedBy, details, name, score}) => {
   if (details) {
     return (
-      <View style={styles.container}>
+      <View style={styles.active}>
         <Text style={styles.score}>{score}</Text>
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.awardedBy}>honored by {awardedBy}</Text>
@@ -13,7 +13,7 @@ export const Achievement = ({awardedBy, details, name, score}) => {
     );
   } else {
     return (
-      <View style={styles.container}>
+      <View style={styles.inactive}>
         <Text style={styles.score}>{score}</Text>
         <Text style={styles.name}>{name}</Text>
       </View>
@@ -22,7 +22,15 @@ export const Achievement = ({awardedBy, details, name, score}) => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  active: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 150,
+    backgroundColor: "#333"
+  },
+  inactive: {
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
@@ -33,7 +41,8 @@ const styles = StyleSheet.create({
     fontSize: 24
   },
   awardedBy: {
-    fontSize: 16
+    fontSize: 10,
+    color: "gold"
   },
   score: {
     fontSize: 8,

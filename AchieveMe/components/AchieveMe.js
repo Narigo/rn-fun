@@ -38,7 +38,8 @@ const achievements = [
   {
     name: "Awesome breakfast",
     awardedBy: "Paul",
-    score: getRandomScore()
+    score: getRandomScore(),
+    details: true
   },
   {
     name: "Defender of the Galaxy",
