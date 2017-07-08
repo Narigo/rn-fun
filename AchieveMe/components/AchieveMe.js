@@ -2,8 +2,10 @@ import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import {NativeRouter, Route} from "react-router-native";
 import {Achievements, Create, Friends, Home, Menu, Splash} from "./index";
+import {push} from "react-router-native";
 
 export const AchieveMe = () => {
+  console.log("AchieveMe re-rendered");
   return (
     <NativeRouter>
       <View style={styles.container}>
@@ -11,10 +13,20 @@ export const AchieveMe = () => {
         <Route path="/" component={(props) => <Menu {...props} styles={styles.welcome} />} />
         <Route path="/home" component={(props) => <Home {...props} styles={styles.welcome} />} />
         <Route path="/create" component={(props) => <Create {...props} styles={styles.welcome} />} />
-        <Route path="/friends"
-               component={(props) => <Friends {...props} friends={friends} styles={styles.welcome} />} />
-        <Route path="/list"
-               component={(props) => <Achievements {...props} achievements={achievements} styles={styles.welcome} />} />
+        <Route
+          path="/friends"
+          component={(props) => <Friends {...props} friends={friends} styles={styles.welcome} />}
+        />
+        <Route
+          path="/list"
+          component={(props) =>
+            <Achievements
+              {...props}
+              setAchievement={setAchievement(props.history)}
+              achievements={achievements}
+              styles={styles.welcome}
+            />}
+        />
       </View>
     </NativeRouter>
   );
@@ -38,8 +50,7 @@ const achievements = [
   {
     name: "Awesome breakfast",
     awardedBy: "Paul",
-    score: getRandomScore(),
-    details: true
+    score: getRandomScore()
   },
   {
     name: "Defender of the Galaxy",
@@ -72,3 +83,11 @@ const friends = [
 function getRandomScore() {
   return Math.floor(Math.random() * 5000);
 }
+
+const setAchievement = history => number => {
+  console.log("setAchievements", number);
+  for (let i = 0; i < achievements.length; i++) {
+    achievements[i].details = number === i;
+  }
+  history.push("/list");
+};

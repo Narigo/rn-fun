@@ -1,8 +1,8 @@
 import React from "react";
-import {View, StyleSheet} from "react-native";
+import {View, StyleSheet, TouchableOpacity} from "react-native";
 import {Text} from "./";
 
-export const Achievement = ({awardedBy, details, name, score}) => {
+export const Achievement = ({awardedBy, details, name, score, setAchievement}) => {
   if (details) {
     return (
       <View style={styles.active}>
@@ -14,8 +14,10 @@ export const Achievement = ({awardedBy, details, name, score}) => {
   } else {
     return (
       <View style={styles.inactive}>
-        <Text style={styles.score}>{score}</Text>
-        <Text style={styles.name}>{name}</Text>
+        <TouchableOpacity onPress={setAchievement}>
+          <Text style={styles.score}>{score}</Text>
+          <Text style={styles.name}>{name}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
