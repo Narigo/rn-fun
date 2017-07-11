@@ -1,6 +1,6 @@
 import React from "react";
 import {View, ScrollView, StyleSheet} from "react-native";
-import {Text} from "./Text";
+import {Text} from "./";
 import {Link} from "react-router-native";
 
 export const Create = () => {

@@ -1,6 +1,8 @@
 import React from "react";
-import {StyleSheet, Text, View} from "react-native";
+import {StyleSheet, View} from "react-native";
+import {Text} from "./";
 import {Link} from "react-router-native";
+import {highlightColor} from "../styles/variables";
 
 export const Splash = () => (
   <Link to="/list">
@@ -25,8 +27,7 @@ const styles = StyleSheet.create({
     marginBottom: 25
   },
   title: {
-    fontSize: 32,
-    color: "#fff"
+    fontSize: 32
   },
   titleFirst: {
     fontWeight: "bold"
@@ -34,6 +35,6 @@ const styles = StyleSheet.create({
   titleSecond: {},
   small: {
     fontSize: 12,
-    color: "#666"
+    color: highlightColor
   }
 });

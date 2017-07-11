@@ -1,7 +1,7 @@
 import React from "react";
 import {StyleSheet, Text, View} from "react-native";
 import {NativeRouter, Route} from "react-router-native";
-import {Achievements, Create, Friends, Home, Menu, Splash} from "./index";
+import {Achievements, Create, Friends, Home, Menu, Splash} from "./";
 import {push} from "react-router-native";
 
 export const AchieveMe = () => {

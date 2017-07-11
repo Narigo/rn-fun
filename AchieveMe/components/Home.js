@@ -1,6 +1,6 @@
 import React from "react";
 import {View} from "react-native";
-import {Text} from "./Text";
+import {Text} from "./";
 import {Link} from "react-router-native";
 
 export const Home = ({styles}) => {

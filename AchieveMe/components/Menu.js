@@ -1,6 +1,7 @@
 import React from "react";
 import {StyleSheet, TouchableOpacity, View} from "react-native";
-import {Text} from "./Text";
+import {Text} from "./";
+import {subtleHighlightColor} from "../styles/variables";
 import {withRouter} from "react-router-native";
 
 export const Menu = withRouter(class extends React.Component {
@@ -75,7 +76,7 @@ const styles = StyleSheet.create({
   openMenu: {
     alignItems: "center",
     alignSelf: "flex-start",
-    backgroundColor: "#666",
+    backgroundColor: subtleHighlightColor,
     display: "flex",
     justifyContent: "center",
     margin: "auto",
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
   closedMenu: {
     alignItems: "center",
     alignSelf: "flex-start",
-    backgroundColor: "#666",
+    backgroundColor: subtleHighlightColor,
     display: "flex",
     justifyContent: "center",
     height: 75,

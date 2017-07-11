@@ -1,6 +1,7 @@
 import React from "react";
 import {ScrollView, StyleSheet, View} from "react-native";
 import {Achievement, Text} from "./";
+import {subtleHighlightColor} from "../styles/variables";
 import {Link} from "react-router-native";
 
 export const Achievements = ({achievements, setAchievement}) => {
@@ -45,6 +46,6 @@ const styles = StyleSheet.create({
   },
   inner: {
     color: "#000",
-    backgroundColor: "#0f0",
+    backgroundColor: subtleHighlightColor,
   }
 });

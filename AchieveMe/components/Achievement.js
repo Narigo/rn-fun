@@ -1,6 +1,7 @@
 import React from "react";
 import {Divider, View, StyleSheet, TouchableOpacity} from "react-native";
 import {Text} from "./";
+import {highlightColor, subtleHighlightColor} from "../styles/variables";
 
 export const Achievement = ({awardedBy, details, name, score, setAchievement}) => {
   if (details) {
@@ -34,7 +35,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     height: 150,
-    backgroundColor: "#333"
+    backgroundColor: subtleHighlightColor
   },
   inactive: {
     flex: 1,
@@ -59,7 +60,7 @@ const styles = StyleSheet.create({
   },
   dividerScore: {
     flex: 1,
-    backgroundColor: "#666",
+    backgroundColor: highlightColor,
     marginLeft: 5,
     marginRight: 5,
     height: StyleSheet.hairlineWidth
