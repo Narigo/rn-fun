@@ -5,7 +5,6 @@ import {Achievements, Create, Friends, Home, Menu, Splash} from "./";
 import {push} from "react-router-native";
 
 export const AchieveMe = () => {
-  console.log("AchieveMe re-rendered");
   return (
     <NativeRouter>
       <View style={styles.container}>
@@ -85,7 +84,6 @@ function getRandomScore() {
 }
 
 const setAchievement = history => number => {
-  console.log("setAchievements", number);
   for (let i = 0; i < achievements.length; i++) {
     achievements[i].details = number === i;
   }
