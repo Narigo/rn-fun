@@ -1,7 +1,6 @@
 import React from "react";
-import {ScrollView, StyleSheet, View} from "react-native";
-import {Achievement, Text} from "./";
-import {subtleHighlightColor} from "../styles/variables";
+import {ScrollView, StyleSheet, Text, View} from "react-native";
+import {Achievement, BannerText} from "./";
 import {Link} from "react-router-native";
 
 export const Achievements = ({achievements, setAchievement}) => {
@@ -14,34 +13,14 @@ export const Achievements = ({achievements, setAchievement}) => {
           {...achievement}
         />
       ))}
-      <Link to="/home" style={styles.linkWrap}>
-        <Text style={styles.wrap}>
-          <Text style={styles.inner}>
+      <BannerText>
+        <Link to="/home">
+          <Text>
             Back to Home with a very long text that hopefully breaks into the next line just
             to see how it behaves.
           </Text>
-        </Text>
-      </Link>
+        </Link>
+      </BannerText>
     </ScrollView>
   );
 };
-
-const styles = StyleSheet.create({
-  linkWrap: {
-    flex: 1,
-    flexDirection: "row",
-    flexWrap: "wrap",
-    alignItems: "center",
-    justifyContent: "center",
-    alignSelf: "center",
-    width: 250
-  },
-  wrap: {
-    lineHeight: 25,
-    textAlign: "center",
-  },
-  inner: {
-    color: "#000",
-    backgroundColor: subtleHighlightColor,
-  }
-});
