@@ -14,11 +14,9 @@ export const Achievements = ({achievements, setAchievement}) => {
         />
       ))}
       <Link to="/home">
-        <BannerText>
-          <Text>
-            Back to Home with a very long text that hopefully breaks into the next line just
-            to see how it behaves.
-          </Text>
+        <BannerText color="#0f0" backgroundColor="#00f">
+          Back to Home with a very long text that hopefully breaks into the next line just
+          to see how it behaves.
         </BannerText>
       </Link>
     </ScrollView>

@@ -9,11 +9,13 @@ export class BannerText extends React.Component {
   }
 
   render() {
-    const {children} = this.props;
+    const {backgroundColor, children, color} = this.props;
+    const colorStyle = color && StyleSheet.create({style:{color}}).style;
+    const backgroundColorStyle = backgroundColor && StyleSheet.create({style:{backgroundColor}}).style;
     return (
       <View ref="view" style={styles.container}>
-        <Text style={styles.wrap}>
-          <Text style={styles.inner}>
+        <Text style={[styles.wrap]}>
+          <Text style={[styles.inner, backgroundColorStyle, colorStyle]}>
             {children}
           </Text>
         </Text>
