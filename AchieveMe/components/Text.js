@@ -1,5 +1,6 @@
 import React from "react";
 import {Text as NativeText, StyleSheet} from "react-native";
+import {textColor} from "../styles/variables";
 
 export class Text extends React.Component {
 
@@ -18,6 +19,6 @@ export class Text extends React.Component {
 
 const styles = StyleSheet.create({
   regular: {
-    color: "#fff"
+    color: textColor
   }
 });

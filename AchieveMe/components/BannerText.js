@@ -1,19 +1,26 @@
 import React from "react";
 import {View, StyleSheet} from "react-native";
 import {Text} from "./";
-import {subtleHighlightColor} from "../styles/variables";
+import {bannerTextColor, bannerTextBackgroundColor} from "../styles/variables";
 
-export const BannerText = ({children}) => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.wrap}>
-        <Text style={styles.inner}>
-          {children}
+export class BannerText extends React.Component {
+  setNativeProps(nativeProps) {
+    this.refs.view.setNativeProps(nativeProps);
+  }
+
+  render() {
+    const {children} = this.props;
+    return (
+      <View ref="view" style={styles.container}>
+        <Text style={styles.wrap}>
+          <Text style={styles.inner}>
+            {children}
+          </Text>
         </Text>
-      </Text>
-    </View>
-  );
-};
+      </View>
+    );
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -30,7 +37,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   inner: {
-    color: "#000",
-    backgroundColor: subtleHighlightColor,
+    color: bannerTextColor,
+    backgroundColor: bannerTextBackgroundColor,
   }
 });
