@@ -7,5 +7,6 @@ export {Friend} from "./Friend";
 export {Friends} from "./Friends";
 export {Home} from "./Home";
 export {Menu} from "./Menu";
+export {ScoreDivider} from "./ScoreDivider";
 export {Splash} from "./Splash";
 export {Text} from "./Text";
