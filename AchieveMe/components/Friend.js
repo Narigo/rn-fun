@@ -12,6 +12,8 @@ export const Friend = ({name}) => {
 
 const styles = StyleSheet.create({
   name: {
-    fontSize: 24
+    fontSize: 24,
+    padding: 5,
+    textAlign: "center"
   }
 });
