@@ -69,14 +69,14 @@ const achievements = [
 ];
 
 const friends = [
-  {name: "Paul"},
-  {name: "Alexander"},
-  {name: "Chris"},
-  {name: "Marina"},
-  {name: "Peter"},
-  {name: "Xombie"},
-  {name: "Sapphire2031"},
-  {name: "Galaxydefender"}
+  {active: false, name: "Paul"},
+  {active: false, name: "Alexander"},
+  {active: true, name: "Chris"},
+  {active: false, name: "Marina"},
+  {active: false, name: "Peter"},
+  {active: false, name: "Xombie"},
+  {active: false, name: "Sapphire2031"},
+  {active: false, name: "Galaxydefender"}
 ];
 
 function getRandomScore() {
