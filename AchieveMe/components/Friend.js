@@ -3,7 +3,7 @@ import {View, StyleSheet} from "react-native";
 import {Text} from "./";
 import {subtleHighlightColor} from "../styles/variables";
 
-export const Friend = ({name}) => {
+export const Friend = ({active, name}) => {
   return (
     <View style={active ? styles.active : styles.inactive}>
       <Text style={styles.name}>{name}</Text>
