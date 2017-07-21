@@ -14,17 +14,25 @@ export const AchieveMe = () => {
         <Route path="/create" component={(props) => <Create {...props} styles={styles.welcome} />} />
         <Route
           path="/friends"
-          component={(props) => <Friends {...props} friends={friends} styles={styles.welcome} />}
+          component={(props) => (
+            <Friends
+              {...props}
+              friends={friends}
+              setFriend={setFriend(props.history)}
+              styles={styles.welcome}
+            />
+          )}
         />
         <Route
           path="/list"
-          component={(props) =>
+          component={(props) => (
             <Achievements
               {...props}
-              setAchievement={setAchievement(props.history)}
               achievements={achievements}
+              setAchievement={setAchievement(props.history)}
               styles={styles.welcome}
-            />}
+            />
+          )}
         />
       </View>
     </NativeRouter>
@@ -69,14 +77,38 @@ const achievements = [
 ];
 
 const friends = [
-  {active: false, name: "Paul"},
-  {active: false, name: "Alexander"},
-  {active: true, name: "Chris"},
-  {active: false, name: "Marina"},
-  {active: false, name: "Peter"},
-  {active: false, name: "Xombie"},
-  {active: false, name: "Sapphire2031"},
-  {active: false, name: "Galaxydefender"}
+  {
+    active: false,
+    name: "Paul"
+  },
+  {
+    active: false,
+    name: "Alexander"
+  },
+  {
+    active: true,
+    name: "Chris"
+  },
+  {
+    active: false,
+    name: "Marina"
+  },
+  {
+    active: false,
+    name: "Peter"
+  },
+  {
+    active: false,
+    name: "Xombie"
+  },
+  {
+    active: false,
+    name: "Sapphire2031"
+  },
+  {
+    active: false,
+    name: "Galaxydefender"
+  }
 ];
 
 function getRandomScore() {
@@ -88,4 +120,11 @@ const setAchievement = history => number => {
     achievements[i].details = number === i;
   }
   history.push("/list");
+};
+
+const setFriend = history => number => {
+  for (let i = 0; i < friends.length; i++) {
+    friends[i].details = number === i;
+  }
+  history.push("/friends");
 };

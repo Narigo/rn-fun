@@ -1,14 +1,24 @@
 import React from "react";
-import {View, StyleSheet} from "react-native";
+import {View, StyleSheet, TouchableOpacity} from "react-native";
 import {Text} from "./";
 import {subtleHighlightColor} from "../styles/variables";
 
-export const Friend = ({active, name}) => {
-  return (
-    <View style={active ? styles.active : styles.inactive}>
-      <Text style={styles.name}>{name}</Text>
-    </View>
-  );
+export const Friend = ({details, name, setFriend}) => {
+  if (details) {
+    return (
+      <View style={styles.active}>
+        <Text style={styles.name}>{name}</Text>
+      </View>
+    );
+  } else {
+    return (
+      <View style={styles.inactive}>
+        <TouchableOpacity onPress={setFriend}>
+          <Text style={styles.name}>{name}</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({
