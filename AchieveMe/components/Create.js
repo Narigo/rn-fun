@@ -41,9 +41,3 @@ export const Create = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  bigger: {
-    fontSize: 24
-  }
-});
