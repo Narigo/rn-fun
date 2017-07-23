@@ -12,11 +12,14 @@ export class BannerText extends React.Component {
     const {backgroundColor, children, color} = this.props;
     const colorStyle = color && StyleSheet.create({style:{color}}).style;
     const backgroundColorStyle = backgroundColor && StyleSheet.create({style:{backgroundColor}}).style;
+
+    const myText = "hier ist ein langer text der hoffentlich irgendwann mal umbricht und wir ihn hier leichter bearbeiten können.";
+
     return (
       <View ref="view" style={styles.container}>
         <Text style={[styles.wrap]}>
           <Text style={[styles.inner, backgroundColorStyle, colorStyle]}>
-            {children}
+            {myText}
           </Text>
         </Text>
       </View>
@@ -32,14 +35,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     alignSelf: "center",
-    width: 250
+    width: 250,
+    backgroundColor: "#f00"
   },
   wrap: {
     lineHeight: 25,
     textAlign: "center",
+    backgroundColor: "#0f0"
   },
   inner: {
-    color: bannerTextColor,
-    backgroundColor: bannerTextBackgroundColor,
+    backgroundColor: "#00f",
+    color: bannerTextColor
   }
 });
